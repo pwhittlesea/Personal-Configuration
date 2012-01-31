@@ -1,0 +1,29 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory autocd beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/pw/.zshrc'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Colouring
+autoload colors ; colors
+local blue_op="%{$fg[blue]%}[%{$reset_color%}"
+local blue_cp="%{$fg[blue]%}]%{$reset_color%}"
+PROMPT="${blue_op}%m${blue_cp} %n$ "
+# End of colouring
+
+# Keychain control
+eval `keychain --eval -Q -q --nogui --agents ssh ~/.ssh/id_rsa`
+# End of keychain control
+
+# LS Colouring
+LS_COLORS="ow=01;97:di=01;97"
+export LS_COLORS
+alias "ls=ls --color=auto"

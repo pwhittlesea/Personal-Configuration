@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "Starting Config Creation"
+HOME='/home/pw'
+
+#ZSH configuration
+if [ -e $HOME/.zshrc ]
+    then 
+        echo "ZSH config exists"
+    else
+        echo Configuring ZSH
+        cp ./config/zsh/rc $HOME/.zshrc
+
+        #ZSH - TMUX
+        if which tmux >/dev/null; then
+            echo -- TMUX
+            echo -e "\n\n[[ $TERM != 'screen' ]] && tmux a && exit 0" >> $HOME/.zshrc
+        fi
+fi
+
