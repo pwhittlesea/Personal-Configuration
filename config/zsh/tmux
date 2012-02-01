@@ -1,0 +1,3 @@
+# Start of TMUX config
+[[ $TERM != 'screen' ]] && tmux a && exit 0
+# End of TMUX config
