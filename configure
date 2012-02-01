@@ -4,18 +4,28 @@ HOME='/home/pw'
 
 #ZSH configuration
 if which zsh>/dev/null; then
-    if [ -e $HOME/.zshrc ]
-        then 
-            echo "ZSH config exists"
-        else
-            echo Configuring ZSH
-            cp ./config/zsh/rc $HOME/.zshrc
+    if [ -e $HOME/.zshrc ]; then 
+        echo "ZSH config exists"
+    else
+        echo Configuring ZSH
+        cp ./config/zsh/zshrc $HOME/.zshrc
     
-            #ZSH - TMUX
-            if which tmux >/dev/null; then
-                echo -- TMUX
-                cat ./config/zsh/tmux >> $HOME/.zshrc
-            fi
+        #ZSH - TMUX
+        if which tmux >/dev/null; then
+            echo -- TMUX
+            cat ./config/zsh/tmux >> $HOME/.zshrc
+        fi
     fi
 fi
 #End ZSH configuration
+
+#TMUX configuration
+if which tmux>/dev/null; then
+    if [ -e $HOME/.tmux.conf ]; then 
+        echo "TMUX config exists"
+    else
+        echo Configuring TMUX
+        cp ./config/zsh/tmux.conf $HOME/.tmux.conf
+    fi
+fi
+#End TMUX configuration
