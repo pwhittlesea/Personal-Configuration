@@ -1,0 +1,10 @@
+set tabstop=4
+set expandtab
+set hlsearch
+set incsearch
+set visualbell
+syntax on
+
+set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+set complete-=k complete+=k
+set spell

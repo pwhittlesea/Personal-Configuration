@@ -29,3 +29,14 @@ if which tmux>/dev/null; then
     fi
 fi
 #End TMUX configuration
+
+#VIM configuration
+if which vim>/dev/null; then
+    if [ -e $HOME/.vimrc ]; then 
+        echo "VIM config exists"
+    else
+        echo Configuring VIM
+        cp ./config/vim/vimrc $HOME/.vimrc
+    fi
+fi
+#End VIM configuration
